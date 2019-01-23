@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <form id="root">
+            <div class="dropdown">
+                <input @keyup="cityDropdown" type="text" id="search" v-model="chosenCity" placeholder="type away" />
+                <ul class="dropdown-content" v-show="isOpen">
+                    <li v-for="result in results.data" @click="selectCity(result)" class="autocomplete-result">
+                        {{ result }}
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
